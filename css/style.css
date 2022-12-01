@@ -12,7 +12,7 @@
 
 :root {
     --main-color: var(--pink);
-    --hover-color: hls(37, 94%, 57%);
+    --hover-color: white;
     --body-color: #000000;
     --container-color: #2b2b2b;
     --text-color: #fcfeff;
@@ -91,24 +91,16 @@
     -webkit-text-stroke: 4px transparent;
 }
 
-div.bg {
-    background-image: repeating-linear-gradient( 105deg, 
-      var(--pink) 0% , 
-      var(--pink) 5%,
-      var(--pink) 12%);
-    color: transparent;
-    filter: drop-shadow(1px 1px 2px white);
-    transform: scaleY(1.03);
-    transform-origin: top;
+.splash-text {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 auto 0 0;
 }
 
-div.fg{
-    background-image: repeating-linear-gradient( 5deg,  
-      var(--pink) 0% , 
-      var(--pink) 23%, 
-      var(--pink) 31%);
-    color: var(--text-color);
-    transform: scale(1);
+.splash-text span {
+    color: var(--main-color);
 }
 
 a {
@@ -117,6 +109,10 @@ a {
 
 li {
     list-style: none;
+}
+
+section {
+    padding: 3rem;
 }
 
 img {
@@ -133,7 +129,7 @@ body {
 }
 
 .container {
-    max-width: 1060px;
+    max-width: 1690px;
     margin: auto;
     width: 100%;
 }
@@ -250,4 +246,71 @@ header {
 
 .nav-link-title {
     font-size: 1rem;
+}
+
+.home {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    margin-top: 5rem !important;
+    border-radius: 0.5rem;
+    animation: fadeInLeftBig;
+    animation-duration: 2s;
+    animation-delay: 2000ms;
+}
+
+.home-image{
+    position: absolute;
+    margin-top: 15px;
+    width: 96.78%;
+    height: 93%;
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(2px 2px 3px var(--pink));
+    filter: drop-shadow(2px 2px 4px var(--pink));
+
+}
+.home-text {
+    padding-left: 40px;
+}
+
+.home-title {
+    font-size: 2rem;
+    font-weight: 600;   
+}
+
+.home-text p {
+    font-size: 0.938rem;
+    margin: 10px 0 20px;
+    color: var(--main-color);
+}
+
+.home-watch-btn {
+    display: flex;
+    align-items: center;
+    column-gap: 0.8rem;
+    color: var(--text-color);
+}
+
+.home-watch-btn .bx {
+    font-size: 21px;
+    background-color: var(--main-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-watch-btn .bx:hover {
+    background: var(--hover-color);
+    color: var(--main-color);
+}
+
+.home-watch-btn span {
+    font-size: 1rem;
+    font-weight: 400;
 }
