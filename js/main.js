@@ -1,12 +1,13 @@
 setTimeout(function() {
-    document.body.style.overflowY = "scroll";
     document.getElementById("float").style.display ="none"
     document.querySelector('header').style.opacity = 1;
+    document.body.style.overflowY = "scroll";
+
 
 }, 2900);
 
 
-/*history.scrollRestoration = 'manual';
+history.scrollRestoration = 'manual';
 
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
@@ -14,7 +15,7 @@ if (history.scrollRestoration) {
     window.onbeforeunload = function () {
         window.scrollTo(0, 0);
     }
-}*/
+}
 
 var swiper = new Swiper(".popular-container", {
     slidesPerView: 1, 
@@ -55,3 +56,16 @@ var swiper = new Swiper(".popular-container", {
     }
   });
 
+let playButton = document.querySelector(".play-movie");
+let video = document.querySelector(".video-container");
+let close = document.querySelector(".close-video");
+
+playButton.onclick = () => {
+    video.classList.add("show-video");
+    document.getElementById("myvideo").play();
+};
+
+close.onclick = () => {
+    video.classList.remove("show-video");
+    document.getElementById("myvideo").pause();
+};

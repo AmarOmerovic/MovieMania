@@ -7,6 +7,7 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
     scroll-padding-top: 2rem;
+    caret-color: transparent;
     overflow-y: visible;
 }
 
@@ -124,6 +125,10 @@ img {
 }
 
 body {
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     background: var(--body-color);
     color: var(--text-color);
 }
@@ -477,4 +482,223 @@ input[type="search"]::-webkit-search-cancel-button {
     animation: bounceIn;
     animation-duration: 3s;
     animation-delay: 2000ms;
+}
+
+.play-container {
+    position: relative;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    margin-top: 5rem !important;
+    border-radius: 0.5rem;
+    animation: fadeInLeftBig;
+    animation-duration: 2s;
+    animation-delay: 2000ms;
+    padding: 3rem;
+}
+
+
+.play-image {
+    position: absolute;
+    margin-top: 15px;
+    width: 96.78%;
+    height: 93%;
+    z-index: -1;
+    object-fit: cover;
+    border-radius: 10px;
+    -webkit-filter: drop-shadow(2px 2px 3px var(--pink));
+    filter: drop-shadow(2px 2px 4px var(--pink));
+}
+
+.play-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px 60px;
+}
+
+.play-text h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    column-gap: 2px;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    margin-top: 4px;
+}
+
+.tags {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+    margin: 1rem 0;
+}
+
+.tags span {
+    background-color: var(--container-color);
+    padding: 0px 10px;
+    margin: 0 4px;
+}
+
+.play-movie {
+    position: absolute;
+    bottom: 18rem;
+    right: 10rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--main-color);
+    font-size: 24px;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        box-shadow: 0 0 0 0 rgb(241, 91, 181, 0.3);
+    } 40% {
+        box-shadow: 0 0 0 30px rgb(241, 91, 181, 0.1);
+    } 80% {
+        box-shadow: 0 0 0 30px rgb(241, 91, 181, 0.3);
+    } 100% {
+        box-shadow: 0 0 0 rgb(241, 91, 181, 0.1);
+    }
+    
+}
+
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: hsl(234 10% 20%) / 60%;
+    z-index: 400;
+}
+
+.video-container.show-video {
+    display: flex;
+}
+
+.video-box {
+    position: relative;
+    width: 82%;
+}
+
+.video-box #myvideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+}
+
+.close-video {
+    position: absolute;
+    right: 0;
+    font-size: 40px;
+    color: var(--main-color);
+}
+
+.about-movie {
+    margin-top: 2rem;
+    padding: 3rem;
+    animation: fadeInLeftBig;
+    animation-duration: 2s;
+    animation-delay: 2000ms;
+}
+
+.about-movie h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--main-color);
+}
+
+.about-movie p {
+    max-width: 600px;
+    font-size: 0.938rem;
+    margin: 10px 0;
+}
+
+.cast-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.cast {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+    gap: 1rem;
+}
+
+.cast-image {
+    width: 258px;
+    height: fit-content;
+    border-radius: 10px;
+    animation: bounceIn;
+    animation-duration: 3s;
+    animation-delay: 2000ms;
+}
+
+.cast-image:hover {
+    transform: scale(1.03);
+    transition: .5s;
+}
+
+
+.download {
+    max-width: 800px;
+    width: 1005;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.download-title {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 1.6rem 0;
+    color: var(--main-color);
+}
+
+.download-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.download-links a{
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 12px 40px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 6px;
+    animation: bounceIn;
+    animation-duration: 3s;
+    animation-delay: 2000ms;
+}
+
+.download-links a:hover{
+    background: var(--hover-color);
+    color: var(--pink);
+    transition: .3s all linear;
 }
