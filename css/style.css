@@ -411,6 +411,12 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
+.swiper-wrapper .movie-box:hover .movie-box-image {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+
 .swiper-button-next,
 .swiper-button-prev {
     position: static !important;
@@ -438,4 +444,37 @@ input[type="search"]::-webkit-search-cancel-button {
 .movies-content .movie-box:hover .movie-box-image {
     transform: scale(1.1);
     transition: .5s;
+}
+
+.next-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.next-button {
+    background: var(--pink);
+    padding: 12px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+    border-radius: 6px;
+    animation: bounceIn;
+    animation-duration: 3s;
+    animation-delay: 2000ms;
+}
+
+.next-button:hover {
+    background: var(--hover-color);
+    color: var(--pink);
+    transition: .3s all linear;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    animation: bounceIn;
+    animation-duration: 3s;
+    animation-delay: 2000ms;
 }
