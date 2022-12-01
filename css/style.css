@@ -104,6 +104,20 @@
     color: var(--main-color);
 }
 
+html::-webkit-scrollbar {
+    width: 0.3rem;
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+::selection {
+    background: var(--main-color);
+    color: var(--text-color);
+}
+
 a {
     text-decoration: none;
 }
