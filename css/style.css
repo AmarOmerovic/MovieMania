@@ -253,7 +253,7 @@ input[type="search"]::-webkit-search-cancel-button {
     flex-direction: column;
     align-items: center;
     color: white;
-    animation: bounceInLeft;
+    animation: backInUp;
     animation-duration: 2s;
     animation-delay: 2000ms;
 
@@ -349,6 +349,9 @@ input[type="search"]::-webkit-search-cancel-button {
     border: 1px solid hsl(200 100% 99 / 5%);
     margin-bottom: 2rem;
     border-radius: 4px;
+    animation: backInUp;
+    animation-duration: 2s;
+    animation-delay: 2000ms;
 }
 
 .heading-title {
@@ -362,6 +365,9 @@ input[type="search"]::-webkit-search-cancel-button {
     height: 600px;
     overflow: hidden;
     border-radius: 10px;
+    animation: bounceIn;
+    animation-duration: 3s;
+    animation-delay: 2000ms;
 }
 
 .movie-box-image {
@@ -405,7 +411,6 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
-
 .swiper-button-next,
 .swiper-button-prev {
     position: static !important;
@@ -417,4 +422,20 @@ input[type="search"]::-webkit-search-cancel-button {
     color: var(--text-color);
     font-size: 18px !important;
     font-weight: 700;
+}
+
+
+.movies .heading {
+    padding: 10px 14px;
+}
+
+.movies-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.movies-content .movie-box:hover .movie-box-image {
+    transform: scale(1.1);
+    transition: .5s;
 }
